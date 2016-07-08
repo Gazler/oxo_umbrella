@@ -20,7 +20,7 @@ defmodule OxoWeb.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias OxoWeb.Repo
+      alias Oxo.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
@@ -33,10 +33,10 @@ defmodule OxoWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(OxoWeb.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Oxo.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(OxoWeb.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Oxo.Repo, {:shared, self()})
     end
 
     conn =

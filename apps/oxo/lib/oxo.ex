@@ -8,6 +8,8 @@ defmodule Oxo do
 
     # Define workers and child supervisors to be supervised
     children = [
+      # Start the Ecto repository
+      supervisor(Oxo.Repo, []),
       # Starts a worker by calling: Oxo.Worker.start_link(arg1, arg2, arg3)
       # worker(Oxo.Worker, [arg1, arg2, arg3]),
     ]

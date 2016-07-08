@@ -1,8 +1,7 @@
 defmodule OxoWeb.GuardianSerializer do
   @behaviour Guardian.Serializer
 
-  alias OxoWeb.Repo
-  alias OxoWeb.User
+  alias Oxo.{Repo, User}
 
   def for_token(user = %User{}), do: { :ok, "User:#{user.id}" }
   def for_token(_), do: { :error, "Unknown resource type" }

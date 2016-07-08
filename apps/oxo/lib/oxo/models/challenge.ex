@@ -1,10 +1,10 @@
-defmodule OxoWeb.Challenge do
-  use OxoWeb.Web, :model
+defmodule Oxo.Challenge do
+  use Oxo.Model
 
   schema "challenge" do
     field :open, :boolean, default: true
-    belongs_to :user, OxoWeb.User
-    belongs_to :challenger, OxoWeb.User
+    belongs_to :user, Oxo.User
+    belongs_to :challenger, Oxo.User
 
     timestamps
   end

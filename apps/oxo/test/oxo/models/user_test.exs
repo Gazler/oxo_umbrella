@@ -1,7 +1,7 @@
-defmodule OxoWeb.UserTest do
-  use OxoWeb.ModelCase
+defmodule Oxo.UserTest do
+  use Oxo.ModelCase
 
-  alias OxoWeb.User
+  alias Oxo.User
 
   @valid_attrs %{email: "some content", password: "password", password_confirmation: "password", name: "some content"}
   @invalid_attrs %{}

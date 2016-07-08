@@ -1,6 +1,6 @@
-defmodule OxoWeb.Auth do
+defmodule Oxo.Auth do
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
-  alias OxoWeb.{Repo, User}
+  alias Oxo.{Repo, User}
 
   def check_user_password(email, given_pass) do
     user = Repo.get_by(User, email: email)

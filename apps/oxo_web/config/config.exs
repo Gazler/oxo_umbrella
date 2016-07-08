@@ -7,7 +7,7 @@ use Mix.Config
 
 # General application configuration
 config :oxo_web,
-  ecto_repos: [OxoWeb.Repo]
+  ecto_repos: []
 
 # Configures the endpoint
 config :oxo_web, OxoWeb.Endpoint,

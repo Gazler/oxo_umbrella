@@ -20,7 +20,7 @@ defmodule OxoWeb.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias OxoWeb.Repo
+      alias Oxo.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
@@ -32,10 +32,10 @@ defmodule OxoWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(OxoWeb.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Oxo.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(OxoWeb.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Oxo.Repo, {:shared, self()})
     end
 
     :ok

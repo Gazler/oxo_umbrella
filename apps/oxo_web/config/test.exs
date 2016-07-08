@@ -8,12 +8,3 @@ config :oxo_web, OxoWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
-
-# Configure your database
-config :oxo_web, OxoWeb.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "oxo_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox

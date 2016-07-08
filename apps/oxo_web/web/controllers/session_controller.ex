@@ -1,7 +1,7 @@
 defmodule OxoWeb.SessionController do
   use OxoWeb.Web, :controller
 
-  alias OxoWeb.Auth
+  alias Oxo.Auth
 
   def new(conn, _) do
     render(conn, "new.html")

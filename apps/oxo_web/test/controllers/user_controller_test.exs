@@ -1,7 +1,7 @@
 defmodule OxoWeb.UserControllerTest do
   use OxoWeb.ConnCase
 
-  alias OxoWeb.User
+  alias Oxo.User
   @valid_attrs %{email: "user@example.com", password: "password", password_confirmation: "password", name: "some content"}
   @invalid_attrs %{}
 
