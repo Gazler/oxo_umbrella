@@ -1,4 +1,4 @@
-defmodule OxoWeb.GameRegistry do
+defmodule Oxo.GameRegistry do
   use GenServer
 
   def start_link(opts \\ []) do
@@ -22,7 +22,7 @@ defmodule OxoWeb.GameRegistry do
   end
 
   defp start_game(id) do
-    {:ok, pid} = GenServer.start_link(OxoWeb.GameServer, [])
+    {:ok, pid} = GenServer.start_link(Oxo.GameServer, [])
     pid
   end
 end

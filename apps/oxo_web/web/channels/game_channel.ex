@@ -1,6 +1,6 @@
 defmodule OxoWeb.GameChannel do
   use OxoWeb.Web, :channel
-  alias OxoWeb.{GameRegistry, GameServer}
+  alias Oxo.{GameRegistry, GameServer}
 
   def join("games:" <> id, payload, socket) do
     {:ok, pid} = GameRegistry.find_game(id)

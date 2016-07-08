@@ -1,6 +1,6 @@
-defmodule OxoWeb.GameServer do
+defmodule Oxo.GameServer do
   use GenServer
-  alias OxoWeb.Game
+  alias Oxo.Game
 
   def start_link(opts \\ []) do
     GenServer.start_link(__MODULE__, opts)

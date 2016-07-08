@@ -1,7 +1,7 @@
-defmodule OxoWeb.GameTest do
+defmodule Oxo.GameTest do
   use ExUnit.Case
 
-  alias OxoWeb.Game
+  alias Oxo.Game
 
   setup do
     game = %Game{status: :started, players: ["p1", "p2"]}
