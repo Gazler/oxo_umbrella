@@ -1,4 +1,4 @@
-defmodule Oxo.Plug.AssignCurrentUser do
+defmodule OxoWeb.Plug.AssignCurrentUser do
   def init(opts \\ []) do
     opts
   end

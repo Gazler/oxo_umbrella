@@ -1,7 +1,7 @@
-defmodule Oxo.GameController do
-  use Oxo.Web, :controller
+defmodule OxoWeb.GameController do
+  use OxoWeb.Web, :controller
 
-  alias Oxo.Challenge
+  alias OxoWeb.Challenge
 
   def show(conn, %{"id" => id}) do
     challenge = Repo.get(Challenge, id)

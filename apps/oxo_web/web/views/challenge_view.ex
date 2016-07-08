@@ -1,3 +1,3 @@
-defmodule Oxo.ChallengeView do
-  use Oxo.Web, :view
+defmodule OxoWeb.ChallengeView do
+  use OxoWeb.Web, :view
 end

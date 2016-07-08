@@ -1,4 +1,4 @@
-defmodule Oxo.ConnCase do
+defmodule OxoWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule Oxo.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Oxo.Repo
+      alias OxoWeb.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import Oxo.Router.Helpers
+      import OxoWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Oxo.Endpoint
+      @endpoint OxoWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Oxo.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(OxoWeb.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Oxo.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(OxoWeb.Repo, {:shared, self()})
     end
 
     conn =

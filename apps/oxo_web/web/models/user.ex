@@ -1,5 +1,5 @@
-defmodule Oxo.User do
-  use Oxo.Web, :model
+defmodule OxoWeb.User do
+  use OxoWeb.Web, :model
 
   schema "users" do
     field :name, :string
@@ -9,7 +9,7 @@ defmodule Oxo.User do
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
 
-    has_many :challenges, Oxo.Challenge
+    has_many :challenges, OxoWeb.Challenge
 
     timestamps
   end

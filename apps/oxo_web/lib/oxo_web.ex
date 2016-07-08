@@ -1,4 +1,4 @@
-defmodule Oxo do
+defmodule OxoWeb do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -9,24 +9,24 @@ defmodule Oxo do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(Oxo.Repo, []),
+      supervisor(OxoWeb.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Oxo.Endpoint, []),
-      # Start your own worker by calling: Oxo.Worker.start_link(arg1, arg2, arg3)
-      # worker(Oxo.Worker, [arg1, arg2, arg3]),
-      worker(Oxo.GameRegistry, []),
+      supervisor(OxoWeb.Endpoint, []),
+      # Start your own worker by calling: OxoWeb.Worker.start_link(arg1, arg2, arg3)
+      # worker(OxoWeb.Worker, [arg1, arg2, arg3]),
+      worker(OxoWeb.GameRegistry, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Oxo.Supervisor]
+    opts = [strategy: :one_for_one, name: OxoWeb.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    Oxo.Endpoint.config_change(changed, removed)
+    OxoWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

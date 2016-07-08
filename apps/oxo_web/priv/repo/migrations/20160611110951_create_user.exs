@@ -1,4 +1,4 @@
-defmodule Oxo.Repo.Migrations.CreateUser do
+defmodule OxoWeb.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
   def change do

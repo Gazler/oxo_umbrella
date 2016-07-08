@@ -1,7 +1,7 @@
-defmodule Oxo.GameChannelTest do
-  use Oxo.ChannelCase
+defmodule OxoWeb.GameChannelTest do
+  use OxoWeb.ChannelCase
 
-  alias Oxo.{GameChannel, User, GameServer, GameRegistry}
+  alias OxoWeb.{GameChannel, User, GameServer, GameRegistry}
 
   setup do
     {:ok, pid} = GameRegistry.find_game("abc")

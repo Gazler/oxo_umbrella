@@ -1,12 +1,12 @@
-defmodule Oxo.Web do
+defmodule OxoWeb.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use Oxo.Web, :controller
-      use Oxo.Web, :view
+      use OxoWeb.Web, :controller
+      use OxoWeb.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -33,12 +33,12 @@ defmodule Oxo.Web do
     quote do
       use Phoenix.Controller
 
-      alias Oxo.Repo
+      alias OxoWeb.Repo
       import Ecto
       import Ecto.Query
 
-      import Oxo.Router.Helpers
-      import Oxo.Gettext
+      import OxoWeb.Router.Helpers
+      import OxoWeb.Gettext
     end
   end
 
@@ -52,9 +52,9 @@ defmodule Oxo.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Oxo.Router.Helpers
-      import Oxo.ErrorHelpers
-      import Oxo.Gettext
+      import OxoWeb.Router.Helpers
+      import OxoWeb.ErrorHelpers
+      import OxoWeb.Gettext
     end
   end
 
@@ -68,10 +68,10 @@ defmodule Oxo.Web do
     quote do
       use Phoenix.Channel
 
-      alias Oxo.Repo
+      alias OxoWeb.Repo
       import Ecto
       import Ecto.Query
-      import Oxo.Gettext
+      import OxoWeb.Gettext
     end
   end
 

@@ -1,4 +1,4 @@
-defmodule Oxo.Game do
+defmodule OxoWeb.Game do
 
   alias __MODULE__
 

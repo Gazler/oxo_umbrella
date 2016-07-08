@@ -1,7 +1,7 @@
-defmodule Oxo.UserController do
-  use Oxo.Web, :controller
+defmodule OxoWeb.UserController do
+  use OxoWeb.Web, :controller
 
-  alias Oxo.User
+  alias OxoWeb.User
 
   def new(conn, _params) do
     changeset = User.changeset(%User{})

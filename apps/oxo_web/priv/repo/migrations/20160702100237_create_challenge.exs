@@ -1,4 +1,4 @@
-defmodule Oxo.Repo.Migrations.CreateChallenge do
+defmodule OxoWeb.Repo.Migrations.CreateChallenge do
   use Ecto.Migration
 
   def change do

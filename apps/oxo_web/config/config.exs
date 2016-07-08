@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :oxo,
-  ecto_repos: [Oxo.Repo]
+config :oxo_web,
+  ecto_repos: [OxoWeb.Repo]
 
 # Configures the endpoint
-config :oxo, Oxo.Endpoint,
+config :oxo_web, OxoWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "8z7EmlxaMD01MZLyNKnfjlprUVYg4TcAh2Ng6BXMIJpZmLdA+ZV14RwLFRl39w/T",
-  render_errors: [view: Oxo.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Oxo.PubSub,
+  render_errors: [view: OxoWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: OxoWeb.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
@@ -34,7 +34,7 @@ config :guardian, Guardian,
   ttl: { 30, :days },
   verify_issuer: true,
   secret_key: "UAWyG3pSFjCsv9nRR+5Ms2TT42CINeeUFQr9g3iOCgkO9btWiTnm8G7ep8qhikcn",
-  serializer: Oxo.GuardianSerializer
+  serializer: OxoWeb.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

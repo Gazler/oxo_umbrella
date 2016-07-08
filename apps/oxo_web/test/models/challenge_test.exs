@@ -1,7 +1,7 @@
-defmodule Oxo.ChallengeTest do
-  use Oxo.ModelCase
+defmodule OxoWeb.ChallengeTest do
+  use OxoWeb.ModelCase
 
-  alias Oxo.Challenge
+  alias OxoWeb.Challenge
 
   @valid_attrs %{open: true}
   @invalid_attrs %{open: nil}

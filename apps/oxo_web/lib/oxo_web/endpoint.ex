@@ -1,14 +1,14 @@
-defmodule Oxo.Endpoint do
-  use Phoenix.Endpoint, otp_app: :oxo
+defmodule OxoWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :oxo_web
 
-  socket "/socket", Oxo.UserSocket
+  socket "/socket", OxoWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :oxo, gzip: false,
+    at: "/", from: :oxo_web, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,8 +35,8 @@ defmodule Oxo.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_oxo_key",
+    key: "_oxo_web_key",
     signing_salt: "Yu1ZH+ZU"
 
-  plug Oxo.Router
+  plug OxoWeb.Router
 end

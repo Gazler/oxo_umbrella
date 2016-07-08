@@ -1,3 +1,3 @@
-defmodule Oxo.UserView do
-  use Oxo.Web, :view
+defmodule OxoWeb.UserView do
+  use OxoWeb.Web, :view
 end

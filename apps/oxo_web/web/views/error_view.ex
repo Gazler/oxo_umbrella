@@ -1,5 +1,5 @@
-defmodule Oxo.ErrorView do
-  use Oxo.Web, :view
+defmodule OxoWeb.ErrorView do
+  use OxoWeb.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

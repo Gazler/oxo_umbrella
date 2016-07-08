@@ -1,7 +1,7 @@
-defmodule Oxo.ChallengeController do
-  use Oxo.Web, :controller
+defmodule OxoWeb.ChallengeController do
+  use OxoWeb.Web, :controller
 
-  alias Oxo.Challenge
+  alias OxoWeb.Challenge
 
   def index(conn, _params) do
     current_user = conn.assigns.current_user

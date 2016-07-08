@@ -1,7 +1,7 @@
-defmodule Oxo.GameServerTest do
+defmodule OxoWeb.GameServerTest do
   use ExUnit.Case
 
-  alias Oxo.GameServer
+  alias OxoWeb.GameServer
 
   setup do
     {:ok, pid} = GameServer.start_link()

@@ -1,4 +1,4 @@
-# Oxo
+# OxoWeb
 
 To start your Phoenix app:
 

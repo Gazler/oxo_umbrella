@@ -1,4 +1,4 @@
-defmodule Oxo.ChannelCase do
+defmodule OxoWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,22 +20,22 @@ defmodule Oxo.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias Oxo.Repo
+      alias OxoWeb.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint Oxo.Endpoint
+      @endpoint OxoWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Oxo.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(OxoWeb.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Oxo.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(OxoWeb.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,3 +1,3 @@
-defmodule Oxo.LayoutViewTest do
-  use Oxo.ConnCase, async: true
+defmodule OxoWeb.LayoutViewTest do
+  use OxoWeb.ConnCase, async: true
 end

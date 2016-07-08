@@ -1,9 +1,9 @@
-defmodule Oxo.UserSocket do
+defmodule OxoWeb.UserSocket do
   use Phoenix.Socket
-  alias Oxo.Repo
-  alias Oxo.User
+  alias OxoWeb.Repo
+  alias OxoWeb.User
 
-  channel "games:*", Oxo.GameChannel
+  channel "games:*", OxoWeb.GameChannel
 
   transport :websocket, Phoenix.Transports.WebSocket
 
@@ -24,7 +24,7 @@ defmodule Oxo.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     Oxo.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
+  #     OxoWeb.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

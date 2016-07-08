@@ -1,3 +1,3 @@
-defmodule Oxo.PageViewTest do
-  use Oxo.ConnCase, async: true
+defmodule OxoWeb.PageViewTest do
+  use OxoWeb.ConnCase, async: true
 end

@@ -1,4 +1,4 @@
-defmodule Oxo.ErrorHelpers do
+defmodule OxoWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule Oxo.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(Oxo.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(OxoWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Oxo.Gettext, "errors", msg, opts)
+      Gettext.dgettext(OxoWeb.Gettext, "errors", msg, opts)
     end
   end
 end

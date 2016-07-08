@@ -1,14 +1,18 @@
-defmodule Oxo.Mixfile do
+defmodule OxoWeb.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :oxo,
+    [app: :oxo_web,
      version: "0.0.1",
      elixir: "~> 1.3-rc.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     build_path: "../../_build",
+     config_path: "../../config/config.exs",
+     deps_path: "../../deps",
+     lockfile: "../../mix.lock",
      aliases: aliases,
      deps: deps]
   end
@@ -17,7 +21,7 @@ defmodule Oxo.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Oxo, []},
+    [mod: {OxoWeb, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end

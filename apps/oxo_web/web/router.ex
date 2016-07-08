@@ -1,5 +1,5 @@
-defmodule Oxo.Router do
-  use Oxo.Web, :router
+defmodule OxoWeb.Router do
+  use OxoWeb.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -12,7 +12,7 @@ defmodule Oxo.Router do
   pipeline :browser_session do
     plug Guardian.Plug.VerifySession
     plug Guardian.Plug.LoadResource
-    plug Oxo.Plug.AssignCurrentUser
+    plug OxoWeb.Plug.AssignCurrentUser
   end
 
   pipeline :require_authentication do
@@ -23,7 +23,7 @@ defmodule Oxo.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Oxo do
+  scope "/", OxoWeb do
     pipe_through [:browser, :browser_session]
 
     get "/", PageController, :index
@@ -33,7 +33,7 @@ defmodule Oxo.Router do
     resources "/users", UserController, only: [:new, :create]
   end
 
-  scope "/", Oxo do
+  scope "/", OxoWeb do
     pipe_through [:browser, :browser_session, :require_authentication]
 
     get "/games/:id", GameController, :show

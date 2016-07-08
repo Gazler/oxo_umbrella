@@ -1,3 +1,3 @@
-defmodule Oxo.SessionView do
-  use Oxo.Web, :view
+defmodule OxoWeb.SessionView do
+  use OxoWeb.Web, :view
 end

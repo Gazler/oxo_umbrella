@@ -1,3 +1,3 @@
-defmodule Oxo.GameView do
-  use Oxo.Web, :view
+defmodule OxoWeb.GameView do
+  use OxoWeb.Web, :view
 end

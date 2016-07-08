@@ -1,5 +1,5 @@
-defmodule Oxo.PageControllerTest do
-  use Oxo.ConnCase
+defmodule OxoWeb.PageControllerTest do
+  use OxoWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
