@@ -20,10 +20,6 @@ defmodule OxoWeb.Web do
     quote do
       use Phoenix.Controller
 
-      alias Oxo.Repo
-      import Ecto
-      import Ecto.Query
-
       import OxoWeb.Router.Helpers
       import OxoWeb.Gettext
     end

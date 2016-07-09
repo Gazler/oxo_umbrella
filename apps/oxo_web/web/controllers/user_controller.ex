@@ -9,9 +9,7 @@ defmodule OxoWeb.UserController do
   end
 
   def create(conn, %{"user" => user_params}) do
-    changeset = User.changeset(%User{}, user_params)
-
-    case Repo.insert(changeset) do
+    case Account.register_user(user_params) do
       {:ok, user} ->
         conn
         |> Guardian.Plug.sign_in(user)

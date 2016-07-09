@@ -1,27 +1,15 @@
 defmodule OxoWeb.ChallengeController do
   use OxoWeb.Web, :controller
 
-  alias Oxo.Challenge
+  alias Oxo.{Game, Challenge}
 
   def index(conn, _params) do
-    current_user = conn.assigns.current_user
-    challenges =
-      Challenge
-      |> Ecto.Query.where(open: true)
-      |> Ecto.Query.where([c], c.user_id != ^current_user.id)
-      |> Repo.all()
-      |> Repo.preload(:user)
+    challenges = Game.list_open_challenges(conn.assigns.current_user)
     render(conn, "index.html", challenges: challenges)
   end
 
   def create(conn, _params) do
-    current_user = conn.assigns.current_user
-    challenge =
-      current_user
-      |> Ecto.build_assoc(:challenges)
-      |> Challenge.changeset(%{})
-      |> Repo.insert!()
-
+    challenge = Game.issue_open_challenge(conn.assigns.current_user)
     redirect(conn, to: game_path(conn, :show, challenge))
   end
 end

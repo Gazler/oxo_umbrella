@@ -1,6 +1,9 @@
 defmodule Oxo.Game do
 
   alias __MODULE__
+  alias Oxo.{User, Challenge, Repo}
+
+  require Ecto.Query
 
   defstruct board: [nil, nil, nil, nil, nil, nil, nil, nil, nil],
         players: [],
@@ -8,6 +11,38 @@ defmodule Oxo.Game do
         x_turn: true,
         winner: nil,
         win_line: []
+
+  def list_open_challenges(%User{} = user) do
+    Challenge
+    |> Ecto.Query.where(open: true)
+    |> Ecto.Query.where([c], c.user_id != ^user.id)
+    |> Repo.all()
+    |> Repo.preload(:user)
+  end
+
+  def issue_open_challenge(%User{} = user) do
+    user
+    |> Ecto.build_assoc(:challenges)
+    |> Challenge.changeset(%{})
+    |> Repo.insert!()
+  end
+
+  def close_challenge(id, %User{id: user_id} = user) do
+    case Repo.get(Challenge, id) do
+      %Challenge{user_id: ^user_id} = challenge ->
+        {:ok, challenge}
+      %Challenge{} = challenge ->
+        update_challenge(challenge, %{open: false})
+        {:ok, challenge}
+      _ -> {:error, :not_found}
+    end
+  end
+
+  defp update_challenge(challenge, params) do
+    challenge
+    |> Challenge.changeset(params)
+    |> Repo.update()
+  end
 
   def join_user(%Game{players: [p1]} = state, user_id) when user_id == p1, do: state
   def join_user(%Game{players: [p1, p2]} = state, user_id) when user_id in [p1, p2], do: state
