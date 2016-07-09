@@ -1,6 +1,5 @@
 defmodule OxoWeb.UserSocket do
   use Phoenix.Socket
-  alias Oxo.{Repo, User}
 
   channel "games:*", OxoWeb.GameChannel
 
@@ -9,7 +8,7 @@ defmodule OxoWeb.UserSocket do
   def connect(%{"token" => token}, socket) do
     case Phoenix.Token.verify(socket, "user", token, max_age: 1209600) do
       {:ok, user_id} ->
-        socket = assign(socket, :user, Repo.get!(User, user_id))
+        socket = assign(socket, :user, Account.get_user(user_id))
         {:ok, socket}
       {:error, _} ->
         :error

@@ -51,9 +51,6 @@ defmodule OxoWeb.Web do
     quote do
       use Phoenix.Channel
 
-      alias Oxo.Repo
-      import Ecto
-      import Ecto.Query
       import OxoWeb.Gettext
     end
   end

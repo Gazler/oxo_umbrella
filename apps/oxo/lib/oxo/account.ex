@@ -6,4 +6,8 @@ defmodule Account do
     |> User.changeset(params)
     |> Repo.insert()
   end
+
+  def get_user(id) do
+    Repo.get!(User, id)
+  end
 end
